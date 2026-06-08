@@ -1,0 +1,35 @@
+task_config: configs/task_book_grasp.yaml
+
+seed: 7
+device: auto
+
+data:
+  auto_generate: true
+
+training:
+  epochs: 8
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 0.000001
+  num_workers: 0
+  log_every: 20
+  checkpoint_path: checkpoints/state_diffusion_policy.pt
+
+model:
+  hidden_dim: 256
+  time_embed_dim: 64
+  condition_embed_dim: 128
+  num_layers: 3
+
+diffusion:
+  num_train_timesteps: 50
+  beta_start: 0.0001
+  beta_end: 0.02
+
+sampling:
+  num_inference_steps: 50
+
+eval:
+  episodes: 8
+  max_steps: 48
+  output_path: outputs/eval_rollout.json

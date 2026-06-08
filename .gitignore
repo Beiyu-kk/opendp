@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Training/evaluation artifacts
+data/*.npz
+checkpoints/*.pt
+outputs/*.json

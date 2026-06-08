@@ -80,7 +80,7 @@ utils/       放通用工具
 
 ### 2.2 `diffusion/`：扩散过程
 
-`diffusion/` 用于实现 Diffusion Policy 的加噪、去噪和采样过程。
+`diffusion/` 用于实现 Diffusion Policy 的加噪、去噪和采样过程，其核心实现采用huggingface的diffusers库保证实现效果。
 
 * `noise_scheduler.py`：定义噪声调度器，管理 `beta_t`、`alpha_t` 等扩散参数。
 * `ddpm.py`：实现 DDPM 的核心训练逻辑，包括加噪和 loss 计算。
